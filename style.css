@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-family: 'Irish Grover', cursive;
+    background-color: #5a01ad;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.profile-container {
+    position: relative; /* Necessário para o posicionamento do tooltip */
+    display: inline-block; /* Mantém a imagem e o tooltip juntos */
+}
+
+.tooltip-text {
+    visibility: hidden; /* Inicialmente invisível */
+    width: 120px; /* Largura do balão de mensagem */
+    background-color: #333; /* Cor de fundo do balão */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 5px; /* Espaçamento interno */
+    position: absolute; /* Posicionamento absoluto em relação ao pai */
+    bottom: 125%; /* Posiciona o balão acima da imagem */
+    left: 50%; /* Centraliza horizontalmente */
+    margin-left: -60px; /* Ajusta o balão para centralizar */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s; /* Transição suave */
+    z-index: 1; /* Garante que o balão esteja acima dos outros elementos */
+}
+
+.profile-container:hover .tooltip-text {
+    visibility: visible; /* Torna o balão visível */
+    opacity: 1; /* Torna o balão opaco */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.projetos {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza a div projetos horizontalmente */
+}
+
+.project-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os projetos quebrem linha em telas menores */
+    gap: 20px;
+    justify-content: center; /* Centraliza os projetos dentro da div */
+    margin-bottom: 40px; /* Espaço abaixo do grupo de projetos */
+}
+
+.project {
+    background-color: white; /* Fundo branco para cada guia */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 10px;
+    width: calc(25% - 20px); /* Ajusta a largura dos projetos para caber 4 por linha, considerando o espaçamento */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    text-align: center;
+}
+
+.project-image {
+    width: 100%; /* Ajusta a imagem para preencher o container */
+    border-radius: 4px; /* Bordas arredondadas para a imagem */
+}
+
+.project-title {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+}
+
+.project-caption {
+    font-size: 0.9rem;
+    color: #666; /* Cor cinza para a legenda */
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente em telas menores */
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-content {
+    text-align: center; /* Centraliza o texto */
+}
+h4{
+    color:#333
+}
+
+.title {
+    font-size: 1.7rem;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    color: #f7c900;
+    font-size: 1.0rem;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.profile-pic {
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px 0; /* Adiciona margem vertical para separar da borda do container */
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os ícones quebrem linha em telas menores */
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.icon {
+    width: 60px;
+}
+
+.projects-title {
+    font-size: 2rem;
+}
+
+footer {
+    background-color: #e8e8e8;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-link {
+    margin: 0 15px;
+}
+
+.social-icon {
+    width: 40px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.4rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .subtitle {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .profile-pic {
+        width: 80px; /* Ajusta o tamanho da imagem do perfil */
+    }
+
+    .icon {
+        width: 60px; /* Ajusta o tamanho dos ícones */
+    }
+
+    .projects-title {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte para o título de projetos */
+    }
+
+    .project {
+        width: calc(50% - 20px); /* Ajusta para 2 projetos por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.2rem; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas */
+    }
+
+    .subtitle {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .profile-pic {
+        width: 60px; /* Ajusta ainda mais o tamanho da imagem do perfil */
+    }
+
+    .icon {
+        width: 50px; /* Ajusta o tamanho dos ícones */
+    }
+
+    .projects-title {
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte para o título de projetos */
+    }
+
+    .project {
+        width: calc(100% - 20px); /* Ajusta para 1 projeto por linha em telas muito pequenas */
+    }
+}
